@@ -27,7 +27,7 @@
 #include "vk_device.h"
 #include "util/u_math.h"
 
-extern struct vk_device *dev;
+extern struct vk_device *const dev;
 
 #define MAX_RTS 8 //technically spec only mandates 4, but cmon.
 #define MAX_UBOS 12 //maxPerStageDescriptorUniformBuffers minimum

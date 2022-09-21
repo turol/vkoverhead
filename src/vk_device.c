@@ -257,10 +257,9 @@ vk_create_logical_device(struct vk_device *dev)
    return device;
 }
 
-struct vk_device *
-vk_device_create(void)
+void
+vk_device_create(struct vk_device *dev)
 {
-   struct vk_device *dev = calloc(1, sizeof(struct vk_device));
    if (!dev)
       abort();
 
@@ -351,8 +350,6 @@ vk_device_create(void)
       fprintf(stderr, "Couldn't find device-local mem heap!\n");
       abort();
    }
-
-   return dev;
 }
 
 void vk_stub_function_not_loaded(void)

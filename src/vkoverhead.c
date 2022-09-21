@@ -31,7 +31,8 @@
 #include "xxhash.h"
 #include <inttypes.h>
 
-struct vk_device *dev;
+static struct vk_device device;
+struct vk_device *const dev = &device;
 
 #define MAX_CMDBUFS 50
 #define MAX_CMDBUF_POOLS 3
@@ -2555,7 +2556,7 @@ main(int argc, char *argv[])
 {
    parse_args(argc, (const char**)argv);
    util_cpu_detect();
-   dev = vk_device_create();
+   vk_device_create(&device);
    init_cmdbufs();
    render_pass_clear = create_renderpass(1, true);
    render_pass_dontcare = create_renderpass(1, false);

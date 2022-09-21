@@ -85,8 +85,8 @@ struct vk_device {
    struct vk_dispatch_table vk;
 };
 
-struct vk_device *
-vk_device_create(void);
+void
+vk_device_create(struct vk_device *dev);
 void vk_stub_function_not_loaded(void);
 
 #define VK(fn) dev->vk.fn
